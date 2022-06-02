@@ -23,7 +23,7 @@ const ListItem = ({title}) => {
   return (
     <motion.li
       variants={variants}
-      whileHover={{ scale: 1.1 }}
+      whileHover={{ scale: 1.03 }}
       className={styles.navListItem}
     >
       {title}

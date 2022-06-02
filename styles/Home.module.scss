@@ -74,6 +74,7 @@ $transition-fast: .1s all ease-in;
 .main {
   min-height: 100vh;
   background-color: $background-color;
+  scroll-behavior: smooth;
 }
 
 .footer {
@@ -110,15 +111,19 @@ $transition-fast: .1s all ease-in;
   right: 0;
   bottom: 0;
   width: 100vw;
+  z-index: 2;
 
   .navList {
     padding: 25px;
     position: absolute;
     top: 100px;
-    width: 230px;
+    left: 1rem;
     margin: 0;
+    overflow-y: hidden;
   
     &Item {
+      font-size: $font-size-md;
+      font-weight: $font-weight-medium;
       list-style: none;
       margin-bottom: 20px;
       display: flex;
@@ -167,7 +172,18 @@ $transition-fast: .1s all ease-in;
     line-height: $line-height-base;
     font-size: $font-size-md*2;
     font-weight: $font-weight-extrabold;
+  }
 
+  .scrollIcon {
+    position: absolute;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    bottom: 1rem;
+    z-index: 1;
   }
 }
 
