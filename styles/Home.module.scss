@@ -1,0 +1,202 @@
+// Body
+$body-bg: #f8fafc;
+
+// Typography
+$font-family-sans-serif: 'Nunito', sans-serif;
+$font-size-base: 0.9rem;
+$line-height-base: 1.6;
+
+// Colors
+$primary-color: #B8A164;
+$background-color: #151515;
+
+$white: #fff;
+$black: #000;
+$red: #EB5250;
+
+//filter
+$red-filter: invert(39%) sepia(81%) saturate(706%) hue-rotate(319deg) brightness(95%) contrast(94%);
+$green-filter: invert(29%) sepia(66%) saturate(318%) hue-rotate(86deg) brightness(87%) contrast(82%);
+
+//Margins
+$margin-xs: 0.5rem;
+$margin-sm: 1rem;
+$margin-md: 2rem;
+$margin-lg: 5rem;
+$margin-xl: 7rem;
+
+//Paddings
+$padding-xs: 0.5rem;
+$padding-sm: 1rem;
+$padding-md: 2rem;
+$padding-lg: 5rem;
+$padding-xl: 7rem;
+
+//Font-sizes
+$font-size-xs: 0.5rem;
+$font-size-sm: 1rem;
+$font-size-base: 1.3rem;
+$font-size-md: 1.8rem;
+$font-size-lg: 3rem;
+$font-size-xl: 5rem;
+
+//width
+$width-nav: 17vw;
+
+//Border radius
+$border-radius-sm: 10px;
+$border-radius-md: 25px;
+$border-radius-lg: 50px;
+
+//Font-weight
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extrabold: 800;
+
+//Gap width
+$gap-width: 1.5rem;
+
+//box-shadow
+$box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+//transition
+$transition-slow: .5s all ease-in;
+$transition-base: .3s all ease-in;
+$transition-fast: .1s all ease-in;
+
+
+.container {
+  padding: 0 2rem;
+}
+
+.main {
+  min-height: 100vh;
+  background-color: $background-color;
+}
+
+.footer {
+  display: flex;
+  flex: 1;
+  padding: 2rem 0;
+  justify-content: center;
+  align-items: center;
+  background-color: $background-color;
+}
+
+//Typography
+.subtitle {
+  font-size: $font-size-lg;
+  color: $white;
+  font-weight: $font-weight-extrabold;
+  text-transform: uppercase;
+}
+
+.smalltitle {
+  font-size: $font-size-md;
+  color: $primary-color;
+}
+
+.primaryText {
+  color: $primary-color;
+}
+
+//Hero
+.hero {
+  //position: sticky;
+  //z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-transform: uppercase;
+
+  .title {
+    color: $white;
+    margin: 0;
+    line-height: $line-height-base;
+    font-size: $font-size-md*2;
+    font-weight: $font-weight-extrabold;
+
+  }
+}
+
+@media (min-width: 48rem) {
+  .hero {  
+    .title {
+      font-size: $font-size-xl;
+    }
+  }  
+}
+
+@media (min-width: 60rem) {
+  .hero {  
+    .title {
+      font-size: $font-size-xl*2;
+    }
+  }  
+}
+
+//About
+.about {
+  display: flex;
+  flex-direction: column;
+
+  &__img {
+    .subtitle {
+      margin-left: $margin-md;
+
+      &:nth-of-type(2) {
+        position: relative;
+        margin-top: -$margin-md;
+        z-index: 1;
+      }
+    }
+  }
+
+  &__text {
+    color: $white;
+    line-height: $line-height-base;
+    padding-top: $padding-lg;
+  }
+}
+
+@media (min-width: 48rem) {
+  .about {
+    flex-direction: row;
+    justify-content: space-between;
+
+    &__img {
+      width: 40%;
+
+      .subtitle {
+        margin-left: $margin-lg;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+
+    &__text {
+      width: 45%;
+      padding-right: 5%;
+    }
+  }
+}
+
+
+//Elements
+.dot {
+  color: $primary-color;
+}
+
+.progressIcon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  z-index: 2;
+}
