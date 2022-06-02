@@ -8,7 +8,7 @@ const About = () => {
   return (
     <>
       <motion.div 
-      animate={{ y: 100, scale:1 }} 
+      animate={{ scale:1 }} 
       initial={{ scale:0 }}
       transition={{ ease: "easeOut", duration: 1 }}
       className={styles.about__img}>

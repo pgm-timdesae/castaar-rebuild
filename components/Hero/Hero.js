@@ -2,6 +2,7 @@ import React from 'react';
 import styles from '../../styles/Home.module.scss';
 import Lottie from 'react-lottie';
 import animationData from "../../public/lotties/scroll.json";
+import Image from 'next/image';
 
 const Hero = () => {
   const defaultOptions = {
@@ -20,6 +21,10 @@ const Hero = () => {
         Castaar<span className={styles.dot}>.</span>
         </h1>
 
+        <div className={styles.heroImg}>
+          <Image src="/images/castaar-new.png" alt="Team" width='1920' height='1080' />
+        </div>
+
         <div className={styles.scrollIcon}>
           <Lottie 
           options={defaultOptions}
@@ -27,9 +32,6 @@ const Hero = () => {
           width={75}
           />
         </div>
-
-        <span className={styles.dot}>X</span>
-        <span className={styles.dot}>X</span>
       </div>
     </>
 

@@ -28,10 +28,6 @@ export default function Home() {
           <Hero/>
         </section>
 
-        <section>
-          <Team />
-        </section>
-
         <section className={styles.about}>
           <About/>
         </section>

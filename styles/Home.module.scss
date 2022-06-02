@@ -111,7 +111,7 @@ $transition-fast: .1s all ease-in;
   right: 0;
   bottom: 0;
   width: 100vw;
-  z-index: 2;
+  z-index: 3;
 
   .navList {
     padding: 25px;
@@ -158,47 +158,85 @@ $transition-fast: .1s all ease-in;
 
 //Hero
 .hero {
-  //position: sticky;
-  //z-index: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  height: 60vh;
   text-transform: uppercase;
+  position: relative;
 
   .title {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 12rem;
     color: $white;
-    margin: 0;
+    text-align: center;
     line-height: $line-height-base;
     font-size: $font-size-md*2;
     font-weight: $font-weight-extrabold;
+    z-index: 2;
   }
 
   .scrollIcon {
-    position: absolute;
     position: absolute;
     margin-left: auto;
     margin-right: auto;
     left: 0;
     right: 0;
     text-align: center;
-    bottom: 1rem;
+    bottom: 2rem;
     z-index: 1;
+  }
+
+  .heroImg {
+    height: 60vh;
+    position: relative;
+    top: 2rem;
+    left: 0;
+    z-index: 1; 
+    object-fit: cover;
+    overflow: hidden;
   }
 }
 
 @media (min-width: 48rem) {
   .hero {  
+    height: 80vh;
+
     .title {
       font-size: $font-size-xl;
+      top: 20rem;
+    }
+
+    .heroImg {
+      height: 60vh;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }  
+
+    .scrollIcon {
+      bottom: 1rem;
     }
   }  
 }
 
 @media (min-width: 60rem) {
   .hero {  
+    height: 100vh;
+
     .title {
       font-size: $font-size-xl*2;
+      top: 8rem;
+    }
+
+    .scrollIcon {
+      bottom: 3rem;
+    }
+
+    .heroImg {
+      height: 100vh;
     }
   }  
 }
@@ -207,6 +245,7 @@ $transition-fast: .1s all ease-in;
 .about {
   display: flex;
   flex-direction: column;
+  padding-top: $padding-lg;
 
   &__img {
     .subtitle {
@@ -223,7 +262,7 @@ $transition-fast: .1s all ease-in;
   &__text {
     color: $white;
     line-height: $line-height-base;
-    padding-top: $padding-lg;
+    //padding-top: $padding-lg;
   }
 }
 
