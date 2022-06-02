@@ -4,6 +4,8 @@ import About from '../components/About/About'
 import Card from '../components/Cards/Card'
 import CircleIndicator from '../components/CircleIndicator'
 import Hero from '../components/Hero/Hero'
+import List from '../components/Navigation/List'
+import Navigation from '../components/Navigation/Navigation'
 import Team from '../components/Team/Team'
 import styles from '../styles/Home.module.scss'
 
@@ -18,7 +20,10 @@ export default function Home() {
 
 
       <main className={styles.main}>
-      <CircleIndicator/>
+        <CircleIndicator/>
+
+        <Navigation />
+
         <section className={styles.hero}>
           <Hero/>
         </section>
@@ -40,16 +45,9 @@ export default function Home() {
 
 
       <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
           <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
+            <p>Site by Tim De Saeger</p>
           </span>
-        </a>
       </footer>
     </div>
   )
