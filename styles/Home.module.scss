@@ -85,6 +85,42 @@ $transition-fast: .1s all ease-in;
   align-items: center;
   background-color: $background-color;
   color: $white;
+  text-align: center;
+}
+
+.section {
+  padding: $padding-md 0;
+}
+
+@media (min-width: 48rem){
+  .section {
+    padding: $padding-lg 0;
+  }
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+
+  &Item {
+    color: $white;
+    list-style: none;
+    position: relative;
+    margin-left: $margin-md;
+    margin-bottom: $margin-sm;
+
+    &::before{
+      content: "";
+      position: absolute;
+      background-color: $primary-color;
+      height: 10px;
+      width: 10px;
+      top: $margin-sm;
+      left: -$margin-md;
+      border-radius: $border-radius-lg;
+      transition: 0.3s all ease-in;
+    }
+  }
 }
 
 //Typography
@@ -104,6 +140,11 @@ $transition-fast: .1s all ease-in;
   color: $primary-color;
 }
 
+.paragraph {
+  color: $white;
+  line-height: $line-height-base;
+}
+
 //Navigation
 .nav {
   position: absolute;
@@ -111,13 +152,15 @@ $transition-fast: .1s all ease-in;
   right: 0;
   bottom: 0;
   width: 100vw;
-  z-index: 3;
+  z-index: 5;
+  height: 100vh;
+  overflow-y: hidden;
 
   .navList {
     padding: 25px;
     position: absolute;
     top: 100px;
-    left: 1rem;
+    left: 0;
     margin: 0;
     overflow-y: hidden;
   
@@ -126,9 +169,28 @@ $transition-fast: .1s all ease-in;
       font-weight: $font-weight-medium;
       list-style: none;
       margin-bottom: 20px;
+      margin-left: $margin-md;
       display: flex;
       align-items: center;
       cursor: pointer;
+      color: rgba($black, 0.6);
+
+      &:hover {
+        color: rgba($black, 1);
+
+        &::before{
+          content: "";
+          position: absolute;
+          background-color: $primary-color;
+          height: 10px;
+          width: 10px;
+          top: $margin-sm;
+          left: -$margin-md;
+          border-radius: $border-radius-lg;
+          transition: 0.3s all ease-in;
+        }
+    
+      }
     }
   }
 
@@ -148,10 +210,28 @@ $transition-fast: .1s all ease-in;
     position: absolute;
     top: 40px;
     right: 35px;
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
-    background: transparent;  
+    background: transparent; 
+    z-index: 7; 
+  }
+}
+
+@media (min-width: 60rem) {
+  .nav {
+    width: 40vw;
+    
+    .background {
+      width: 40vw;
+    }
+
+    .hamburger {
+      background-color: $white;
+      svg {
+        margin-top: 7px;
+      }  
+    }
   }
 }
 
@@ -174,7 +254,13 @@ $transition-fast: .1s all ease-in;
     line-height: $line-height-base;
     font-size: $font-size-md*2;
     font-weight: $font-weight-extrabold;
-    z-index: 2;
+    z-index: 3;
+    opacity: 0.7;
+    transition: $transition-base;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 
   .scrollIcon {
@@ -246,7 +332,7 @@ $transition-fast: .1s all ease-in;
   display: flex;
   flex-direction: column;
   padding-top: $padding-lg;
-
+  
   &__img {
     .subtitle {
       margin-left: $margin-md;
@@ -268,6 +354,7 @@ $transition-fast: .1s all ease-in;
 
 @media (min-width: 48rem) {
   .about {
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
 
@@ -290,10 +377,106 @@ $transition-fast: .1s all ease-in;
   }
 }
 
+// Services
+.services {
+  padding: 0 $padding-md;
+  display: flex;
+  flex-direction: column-reverse;
+
+  &__img {
+    .hashtag {
+      display: block;
+      font-size: $font-size-md;
+      text-transform: uppercase;
+      position: relative;
+      text-align: left;
+      right: 0;
+      margin-top: -$margin-sm;
+      z-index: 1;
+      color: $white;
+    }
+  }
+
+  &__text {
+    margin-bottom: $margin-md;
+  }
+}
+
+@media (min-width: 48rem) {
+  .services {  
+    display: flex;
+    flex-direction: row-reverse;
+
+    &__img {
+      width: 40%;
+      overflow: hidden;
+      margin-left: 10%;
+    }
+  
+    &__text {
+      width: 40%;
+    }
+  }
+}
+
+@media (min-width: 60rem) {
+  .services {  
+    padding: 0 $padding-lg;
+  }
+}
+
+// Work
+.work {
+  padding: 0 $padding-md;
+  display: flex;
+  flex-direction: column;
+
+  &__img {
+  }
+
+  &__text {
+    margin-bottom: $margin-md;
+
+    .list {
+      &Item {
+        font-size: $font-size-md;
+      }
+    }
+  }
+}
+
+@media (min-width: 48rem) {
+  .work {  
+    display: flex;
+    flex-direction: row;
+
+    &__img {
+      width: 60%;
+      overflow: hidden;
+      margin-right: 7%;
+    }
+  
+    &__text {
+      width: 30%;
+      margin-top: $margin-lg*2;
+    }
+  }
+}
+
+@media (min-width: 60rem) {
+  .work {  
+    padding: 0 $padding-lg;
+  }
+}
+
+
+
 
 //Elements
 .dot {
   color: $primary-color;
+  z-index: 2;
+  position: relative;
 }
 
 .progressIcon {

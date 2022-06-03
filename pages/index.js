@@ -6,7 +6,9 @@ import CircleIndicator from '../components/CircleIndicator'
 import Hero from '../components/Hero/Hero'
 import List from '../components/Navigation/List'
 import Navigation from '../components/Navigation/Navigation'
+import Services from '../components/services/Services'
 import Team from '../components/Team/Team'
+import Work from '../components/Work/Work'
 import styles from '../styles/Home.module.scss'
 
 export default function Home() {
@@ -28,20 +30,23 @@ export default function Home() {
           <Hero/>
         </section>
 
-        <section className={styles.about}>
+        <section className={styles.section}>
           <About/>
         </section>
 
-        <section className={styles.slider}>
-          <div className={styles.container}>
-            <Card title='test' />
-          </div>
+        <section className={styles.section}>
+          <Work/>
+        </section>
+
+        <section className={styles.section}>
+          <Services/>
         </section>
       </main>
 
 
       <footer className={styles.footer}>
           <span className={styles.logo}>
+            <h2 className={styles.subtitle}>X<span className={styles.dot}>X</span>X<br/>Bizzekes</h2>
             <p>Site by Tim De Saeger</p>
           </span>
       </footer>
